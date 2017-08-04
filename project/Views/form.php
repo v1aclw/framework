@@ -71,7 +71,7 @@ $this->layout(ROOTPATH . '/project/Views/layout.php');
 
 <script type="text/javascript">
     $(function () {
-        var id = <?php echo $task ? $task->id : null; ?>;
+        var id = <?php echo $task ? $task->id : 0; ?>;
 
         $(document).on('click', '#preview', function () {
             $.ajax({
