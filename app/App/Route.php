@@ -118,7 +118,7 @@ class Route
                 $replace['{' . $match . '}'] = '(' . (array_key_exists($match, $this->_patterns) ? $this->_patterns[$match] : self::DEFAULT_PATTERN) . ')';
                 $vars[] = $match;
             }
-            $pattern = '/^' . str_replace('/', '\/', str_replace('\/', '/', strtr($this->_url, $replace))) . '\/?\??.*$/iu';
+            $pattern = '/^' . str_replace('/', '\/', str_replace('\/', '/', strtr($this->_url, $replace))) . '\/?(?:\?.*)?$/iu';
             if (preg_match($pattern, $url, $matches)) {
                 foreach ($matches as $key => $match) {
                     if ($key === 0) continue;
